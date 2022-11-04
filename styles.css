@@ -1,0 +1,130 @@
+:root {
+    --text-faq: #1d1e35;
+    --text-h6: #4a4b5e;
+    --text: #787887;
+    --text-active: #f47c57;
+    --background-gradient-top: #af67e9;
+    --background-gradient-bottom: #6565e7;
+    --dividers: #e7e7e9;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.2rem;
+}
+.container {
+    background: linear-gradient(to bottom, var(--background-gradient-top), var(--background-gradient-bottom));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.faq-main {
+    background-color: var(--dividers);
+    display: grid;
+    justify-items: center;
+    border-radius: 20px;
+    width: 320px;
+    height: 460px;
+    padding: 0 28px;
+    position: relative;
+}
+.woman {
+    width: 240px;
+    height: 184px;
+    position: absolute;
+    right: 40px;
+    top: -108px;
+}
+.box {
+    display: none;
+    position: absolute;
+}
+.questions {
+    height: 340px;
+    padding-bottom: 12px;
+}
+.questions h1 {
+    color: var(--text-faq);
+    text-align: center;
+    font-weight:700;
+    font-size: 2rem;
+    margin: 8px 0;
+}
+.questions input {
+    display: none;
+}
+.questions label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text);
+    border-bottom: dotted 1px var(--text);
+    min-height: 50px;
+}
+.questions label div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.questions label div h4 {
+    width: 240px;
+    font-weight: 400;
+}
+.questions label p {
+    display: none;
+    width: 240px;
+    margin: 4px 0
+}
+.questions label:hover div h4 {
+    color: var(--text-active);
+}
+.questions input:checked+label div h4 {
+    font-weight: 700;
+    color: var(--text-faq);
+}
+.questions input:checked+label img {
+    rotate: 180deg;
+}
+.questions input:checked+label p {
+    display: block;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: var(--dividers); }
+
+@media (min-width: 680px) {
+    .faq-main {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        width: 560px;
+        height: 348px;
+    }
+    .pattern {
+        width: 240px;
+    }
+    .pattern img {
+        width: 240px;
+        position: absolute;
+        top: 20px;
+        left: -32px;
+    }
+    .woman {
+        top: 40px;
+        left: -32px;
+    }
+    .woman img {
+        width: 240px;
+    }
+    .questions {
+        padding: 16px 0 0;
+    }
+}
